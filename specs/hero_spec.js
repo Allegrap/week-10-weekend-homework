@@ -24,6 +24,10 @@ describe('hero', function(){
     assert.equal(100, this.hero1.health);
   });
 
+  it("should have money", function(){
+    assert.equal(1000, this.hero1.money);
+  });
+
   it("should have favFood", function(){
     assert.equal("cheese", this.hero1.favFood);
   });
@@ -53,7 +57,7 @@ describe('hero', function(){
     assert.equal(80, this.hero1.health);
   })
 
-  it("should increase more health after eating favFood", function(){
+  it("should increase health more after eating favFood", function(){
     this.hero1.eat(this.cheese);
     assert.equal(115, this.hero1.health);
   })
