@@ -16,4 +16,9 @@ describe('rat', function(){
     assert.equal("brown", this.rat1.type);
   });
 
+  it("should turn food poisonous when touched", function(){
+    this.rat1.touchFood(this.cheese);
+    assert.equal(true, this.cheese.poisonous);
+  });
+
 })
