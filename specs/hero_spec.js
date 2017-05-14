@@ -93,5 +93,15 @@ describe('hero', function(){
     assert.equal("lordship", this.hero1.tasks[0].reward);
   })
 
+  it("should sort tasks by reward", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.addTask(this.task2);
+    this.hero1.addTask(this.task3);
+    this.hero1.sortByReward();
+    assert.equal("cow", this.hero1.tasks[0].urgency);
+    assert.equal("hay", this.hero1.tasks[1].urgency);
+    assert.equal("lordship", this.hero1.tasks[2].urgency);
+  })
+
 
 })
