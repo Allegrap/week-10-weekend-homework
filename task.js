@@ -5,6 +5,11 @@ var Task = function(difficulty, urgency, reward, completed){
   this.completed = false;
 };
 
+Task.prototype = {
+  completeTask: function(){
+    this.completed = true;
+  }
+};
 
 
 module.exports = Task;
