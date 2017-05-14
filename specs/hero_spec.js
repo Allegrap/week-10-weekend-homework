@@ -7,19 +7,21 @@ describe('hero', function(){
     this.hero1 = new Hero("Allegra", 100, "cheese");
   });
 
-  it("should have a name", function(){
+  it("should have name", function(){
     assert.equal("Allegra", this.hero1.name);
   });
 
-  it("should have a health", function(){
+  it("should have health", function(){
     assert.equal(100, this.hero1.health);
   });
 
-  it("should have a favFood", function(){
+  it("should have favFood", function(){
     assert.equal("cheese", this.hero1.favFood);
   });
 
-
+  it("should talk", function(){
+    assert.equal("My name is Allegra", this.hero1.talk());
+  });
 
 
 })
