@@ -19,6 +19,12 @@ Hero.prototype = {
   },
   addTask: function(task){
     return this.tasks.push(task);
+  },
+  sortByDifficulty: function(){
+    this.tasks.sort(function(a, b){
+      return a.difficulty - b.difficulty;
+    });
+    console.log(this.tasks);
   }
 };
 
