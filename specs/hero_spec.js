@@ -1,4 +1,5 @@
 var Hero = require('../hero.js');
+var Task = require('../task.js');
 var assert = require('assert');
 
 describe('hero', function(){
