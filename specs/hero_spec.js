@@ -11,6 +11,12 @@ describe('hero', function(){
     assert.equal("Allegra", this.hero1.name);
   });
 
+  it("should have a health", function(){
+    assert.equal(100, this.hero1.health);
+  });
+
+
+
 
 
 
