@@ -11,7 +11,9 @@ Hero.prototype = {
     return "My name is " + this.name;
   },
   eat: function(food){
-    if(food.name === this.favFood){
+    if(food.poisonous === true){
+      return this.health -= 20;
+    }else if(food.name === this.favFood){
       var newValue = food.replenishmentValue * 1.5;
       return this.health += newValue;
     }else{
