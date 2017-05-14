@@ -6,6 +6,7 @@ describe('task', function(){
 
   beforeEach(function(){
     this.task1 = new Task(10, 5, 100);
+    this.hero = new Hero("Allegra", 100, 1000, "cheese");
   });
 
   it("should have difficulty", function(){
@@ -26,6 +27,11 @@ describe('task', function(){
 
   it("should mark task as completed", function(){
     this.task1.completeTask();
+    assert.equal(true, this.task1.completed);
+  });
+
+  it("should be completed when marked completed by hero", function(){
+    this.hero.completeTask(this.task1);
     assert.equal(true, this.task1.completed);
   });
 
