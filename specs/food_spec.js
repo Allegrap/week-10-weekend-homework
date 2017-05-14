@@ -11,5 +11,9 @@ describe('food', function(){
     assert.equal("banana", this.food1.name);
   });
 
+  it("should have replenishment value", function(){
+    assert.equal(8, this.food1.replenishmentValue);
+  });
+
 
 })
