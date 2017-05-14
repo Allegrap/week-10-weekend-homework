@@ -15,7 +15,9 @@ describe('hero', function(){
     assert.equal(100, this.hero1.health);
   });
 
-
+  it("should have a favFood", function(){
+    assert.equal("cheese", this.hero1.favFood);
+  });
 
 
 
