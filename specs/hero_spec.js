@@ -1,6 +1,7 @@
 var Hero = require('../hero.js');
 var Task = require('../task.js');
 var Food = require('../food.js');
+var Rat = require('../rat.js');
 var assert = require('assert');
 
 describe('hero', function(){
@@ -12,6 +13,7 @@ describe('hero', function(){
     this.task1 = new Task(20, 15, 100);
     this.task2 = new Task(10, 7, 70);
     this.task3 = new Task(30, 20, 400);
+    this.rat1 = new Rat("brown");
   });
 
   it("should have name", function(){
@@ -37,6 +39,12 @@ describe('hero', function(){
   it("should increase health after eating", function(){
     this.hero1.eat(this.banana);
     assert.equal(108, this.hero1.health);
+  })
+
+  it("should reduce health after eating poisonous food", function(){
+    this.rat1.touchFood(this.banana);
+    this.hero1.eat(this.banana);
+    assert.equal(80, this.hero1.health);
   })
 
   it("should increase more health after eating favFood", function(){
