@@ -6,12 +6,12 @@ var assert = require('assert');
 describe('hero', function(){
 
   beforeEach(function(){
-    this.hero1 = new Hero("Allegra", 100, "cheese");
+    this.hero1 = new Hero("Allegra", 100, 1000, "cheese");
     this.banana = new Food("banana", 8);
     this.cheese = new Food("cheese", 10);
-    this.task1 = new Task(20, 15, "lordship");
-    this.task2 = new Task(10, 7, "cow");
-    this.task3 = new Task(30, 20, "hay");
+    this.task1 = new Task(20, 15, 100);
+    this.task2 = new Task(10, 7, 70);
+    this.task3 = new Task(30, 20, 400);
   });
 
   it("should have name", function(){
@@ -90,7 +90,7 @@ describe('hero', function(){
   it("should not be in reward order", function(){
     this.hero1.addTask(this.task1);
     this.hero1.addTask(this.task2);
-    assert.equal("lordship", this.hero1.tasks[0].reward);
+    assert.equal(100, this.hero1.tasks[0].reward);
   })
 
   it("should sort tasks by reward", function(){
@@ -98,9 +98,9 @@ describe('hero', function(){
     this.hero1.addTask(this.task2);
     this.hero1.addTask(this.task3);
     this.hero1.sortByReward();
-    assert.equal("cow", this.hero1.tasks[0].urgency);
-    assert.equal("hay", this.hero1.tasks[1].urgency);
-    assert.equal("lordship", this.hero1.tasks[2].urgency);
+    assert.equal(70, this.hero1.tasks[0].reward);
+    assert.equal(100, this.hero1.tasks[1].reward);
+    assert.equal(400, this.hero1.tasks[2].reward);
   })
 
 

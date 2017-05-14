@@ -5,7 +5,7 @@ var assert = require('assert');
 describe('task', function(){
 
   beforeEach(function(){
-    this.task1 = new Task(10, 5, "lordship");
+    this.task1 = new Task(10, 5, 100);
   });
 
   it("should have difficulty", function(){
@@ -17,7 +17,7 @@ describe('task', function(){
   });
 
   it("should have reward", function(){
-    assert.equal("lordship", this.task1.reward);
+    assert.equal(100, this.task1.reward);
   });
 
   it("should start completed is false", function(){

@@ -1,7 +1,8 @@
-var Hero = function(name, health, favFood){
+var Hero = function(name, health, money, favFood){
   this.name = name;
   this.health = health;
   this.favFood = favFood;
+  this.money = money;
   this.tasks = [];
 };
 
@@ -28,6 +29,11 @@ Hero.prototype = {
   sortByUrgency: function(){
     this.tasks.sort(function(a, b){
       return a.urgency - b.urgency;
+    });
+  },
+  sortByReward: function(){
+    this.tasks.sort(function(a, b){
+      return a.reward - b.reward;
     });
   }
 };
