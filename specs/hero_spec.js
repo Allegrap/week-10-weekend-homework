@@ -55,6 +55,12 @@ describe('hero', function(){
     assert.equal(2, this.hero1.tasks.length);
   })
 
+  it("should not be in difficulty order", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.addTask(this.task2);
+    assert.equal(20, this.hero1.tasks[0].difficulty);
+  })
+
   it("should sort tasks by difficulty", function(){
     this.hero1.addTask(this.task1);
     this.hero1.addTask(this.task2);
