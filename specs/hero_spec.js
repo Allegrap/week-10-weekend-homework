@@ -87,5 +87,11 @@ describe('hero', function(){
     assert.equal(20, this.hero1.tasks[2].urgency);
   })
 
+  it("should not be in reward order", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.addTask(this.task2);
+    assert.equal("lordship", this.hero1.tasks[0].reward);
+  })
+
 
 })
