@@ -12,7 +12,9 @@ describe('task', function(){
     assert.equal(10, this.task1.difficulty);
   });
 
-
+  it("should have urgency", function(){
+    assert.equal("high", this.task1.urgency);
+  });
 
 
 })
