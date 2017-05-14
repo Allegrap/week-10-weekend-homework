@@ -35,6 +35,10 @@ Hero.prototype = {
     this.tasks.sort(function(a, b){
       return a.reward - b.reward;
     });
+  },
+  markAsCompleted: function(task){
+    task.completeTask();
+    return this.money += task.reward;
   }
 };
 
