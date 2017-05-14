@@ -7,3 +7,5 @@ Rat.prototype = {
     return food.poisonous = true;
   }
 }
+
+module.exports = Rat;
