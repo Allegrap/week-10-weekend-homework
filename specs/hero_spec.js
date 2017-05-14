@@ -41,6 +41,12 @@ describe('hero', function(){
     assert.equal(108, this.hero1.health);
   })
 
+  it("should increase health after eating multiple", function(){
+    this.hero1.eat(this.banana);
+    this.hero1.eat(this.cheese);
+    assert.equal(123, this.hero1.health);
+  })
+
   it("should reduce health after eating poisonous food", function(){
     this.rat1.touchFood(this.banana);
     this.hero1.eat(this.banana);
