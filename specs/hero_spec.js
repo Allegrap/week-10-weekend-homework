@@ -103,5 +103,12 @@ describe('hero', function(){
     assert.equal(400, this.hero1.tasks[2].reward);
   })
 
+  it("should mark task as completed", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.markAsCompleted(task1);
+    assert.equal(true, this.task1.completed);
+    assert.equal(1100, this.hero1.money);
+  })
+
 
 })
