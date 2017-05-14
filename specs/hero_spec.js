@@ -23,5 +23,9 @@ describe('hero', function(){
     assert.equal("My name is Allegra", this.hero1.talk());
   });
 
+  it("should start with 0 tasks", function(){
+    assert.equal(0, this.hero1.tasks.length);
+  })
+
 
 })
