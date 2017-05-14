@@ -105,9 +105,30 @@ describe('hero', function(){
 
   it("should mark task as completed", function(){
     this.hero1.addTask(this.task1);
-    this.hero1.markAsCompleted(this.task1);
+    this.hero1.completeTask(this.task1);
     assert.equal(true, this.task1.completed);
     assert.equal(1100, this.hero1.money);
+  })
+
+  it("should view completed task", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.addTask(this.task2);
+    this.hero1.addTask(this.task3);
+    this.hero1.completeTask(this.task2);
+    var completedTask1 = this.hero1.viewCompletedTasks()[0].difficulty;
+    assert.equal(10, completedTask1);
+  })
+
+  it("should view multiple completed tasks", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.addTask(this.task2);
+    this.hero1.addTask(this.task3);
+    this.hero1.completeTask(this.task2);
+    this.hero1.completeTask(this.task1);
+    var completedTask1 = this.hero1.viewCompletedTasks()[0].difficulty;
+    var completedTask2 = this.hero1.viewCompletedTasks()[1].difficulty;
+    assert.equal(20, completedTask1);
+    assert.equal(10, completedTask2);
   })
 
 

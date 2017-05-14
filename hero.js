@@ -36,9 +36,18 @@ Hero.prototype = {
       return a.reward - b.reward;
     });
   },
-  markAsCompleted: function(task){
+  completeTask: function(task){
     task.completeTask();
     return this.money += task.reward;
+  },
+  viewCompletedTasks: function(){
+    completed = [];
+    for(task of this.tasks){
+      if(task.completed === true){
+        completed.push(task);
+      }
+    }
+    return completed;
   }
 };
 
