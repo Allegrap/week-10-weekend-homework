@@ -9,9 +9,9 @@ describe('hero', function(){
     this.hero1 = new Hero("Allegra", 100, "cheese");
     this.banana = new Food("banana", 8);
     this.cheese = new Food("cheese", 10);
-    this.task1 = new Task(20, 5, "lordship");
+    this.task1 = new Task(20, 15, "lordship");
     this.task2 = new Task(10, 7, "cow");
-    this.task3 = new Task(30, 10, "hay");
+    this.task3 = new Task(30, 20, "hay");
   });
 
   it("should have name", function(){
@@ -69,6 +69,22 @@ describe('hero', function(){
     assert.equal(10, this.hero1.tasks[0].difficulty);
     assert.equal(20, this.hero1.tasks[1].difficulty);
     assert.equal(30, this.hero1.tasks[2].difficulty);
+  })
+
+  it("should not be in urgency order", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.addTask(this.task2);
+    assert.equal(15, this.hero1.tasks[0].urgency);
+  })
+
+  it("should sort tasks by urgency", function(){
+    this.hero1.addTask(this.task1);
+    this.hero1.addTask(this.task2);
+    this.hero1.addTask(this.task3);
+    this.hero1.sortByUrgency();
+    assert.equal(7, this.hero1.tasks[0].urgency);
+    assert.equal(15, this.hero1.tasks[1].urgency);
+    assert.equal(20, this.hero1.tasks[2].urgency);
   })
 
 
