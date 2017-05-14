@@ -15,5 +15,9 @@ describe('food', function(){
     assert.equal(8, this.banana.replenishmentValue);
   });
 
+  it("should not be poisonous at start", function(){
+    assert.equal(false, this.banana.poisonous);
+  });
+
 
 })

@@ -32,13 +32,13 @@ describe('hero', function(){
     assert.equal("cheese", this.hero1.favFood);
   });
 
-  it("should talk", function(){
-    assert.equal("My name is Allegra", this.hero1.talk());
-  });
-
   it("should start with 0 tasks", function(){
     assert.equal(0, this.hero1.tasks.length);
   })
+
+  it("should talk", function(){
+    assert.equal("My name is Allegra", this.hero1.talk());
+  });
 
   it("should increase health after eating", function(){
     this.hero1.eat(this.banana);
