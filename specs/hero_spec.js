@@ -1,11 +1,14 @@
 var Hero = require('../hero.js');
 var Task = require('../task.js');
+var Food = require('../food.js');
 var assert = require('assert');
 
 describe('hero', function(){
 
   beforeEach(function(){
     this.hero1 = new Hero("Allegra", 100, "cheese");
+    this.banana = new Food("banana", 8);
+    this.cheese = new Food("cheese", 10);
   });
 
   it("should have name", function(){
@@ -26,6 +29,11 @@ describe('hero', function(){
 
   it("should start with 0 tasks", function(){
     assert.equal(0, this.hero1.tasks.length);
+  })
+
+  it("should increase health after eating", function(){
+    this.hero1.eat(this.banana);
+    assert.equal(108, this.hero1.health);
   })
 
 
