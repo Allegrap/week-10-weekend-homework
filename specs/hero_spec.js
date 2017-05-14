@@ -9,6 +9,9 @@ describe('hero', function(){
     this.hero1 = new Hero("Allegra", 100, "cheese");
     this.banana = new Food("banana", 8);
     this.cheese = new Food("cheese", 10);
+    this.task1 = new Task(10, 5, "lordship");
+    this.task2 = new Task(20, 7, "lordship");
+    this.task3 = new Task(30, 10, "lordship");
   });
 
   it("should have name", function(){
@@ -39,6 +42,11 @@ describe('hero', function(){
   it("should increase more health after eating favFood", function(){
     this.hero1.eat(this.cheese);
     assert.equal(115, this.hero1.health);
+  })
+
+  it("should add task", function(){
+    this.hero1.addTask(this.task1);
+    assert.equal(1, this.hero1.tasks.length);
   })
 
 

@@ -5,7 +5,7 @@ var assert = require('assert');
 describe('task', function(){
 
   beforeEach(function(){
-    this.task1 = new Task(10, "high", "lordship");
+    this.task1 = new Task(10, 5, "lordship");
   });
 
   it("should have difficulty", function(){
@@ -13,7 +13,7 @@ describe('task', function(){
   });
 
   it("should have urgency", function(){
-    assert.equal("high", this.task1.urgency);
+    assert.equal(5, this.task1.urgency);
   });
 
   it("should have reward", function(){
