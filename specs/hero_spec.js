@@ -36,5 +36,10 @@ describe('hero', function(){
     assert.equal(108, this.hero1.health);
   })
 
+  it("should increase more health after eating favFood", function(){
+    this.hero1.eat(this.cheese);
+    assert.equal(115, this.hero1.health);
+  })
+
 
 })
